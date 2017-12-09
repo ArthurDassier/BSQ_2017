@@ -7,10 +7,16 @@
 
 #ifndef MYLIB_H
 #define MYLIB_H
-#include <unistd.h>
+
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <stdio.h>
-#include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdarg.h>
+#include "bsq.h"
+#include "printf.h"
 
 void my_putchar (char c);
 int my_isneg(int nb);

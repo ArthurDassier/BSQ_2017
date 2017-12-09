@@ -6,6 +6,7 @@
 ##
 
 SRC	=	srcs/brain.c		\
+		srcs/init.c		\
 
 OBJ	=	$(SRC:.c = .o)
 
