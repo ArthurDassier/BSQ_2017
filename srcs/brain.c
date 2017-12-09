@@ -9,9 +9,9 @@
 
 int main(int argc, char const *argv[])
 {
-	char	*buffer = malloc(sizeof(double) * 10000);
+	char	*buffer = malloc(sizeof(double) * 20000);
 	int	fd = open(argv[1], O_RDONLY);
-	int	size = read(fd, buffer, sizeof(double) * 10000);
+	int	size = read(fd, buffer, sizeof(double) * 20000);
 
 	buffer[size] = 0;
 	write (1, buffer, size);
