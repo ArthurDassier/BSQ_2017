@@ -7,6 +7,7 @@
 
 SRC	=	srcs/brain.c		\
 		srcs/init.c		\
+		srcs/algo.c		\
 
 OBJ	=	$(SRC:.c = .o)
 
@@ -28,7 +29,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJ)
 		$(MAKE) -C lib/my
-		$(CC) -o $(NAME) $(OBJ) $(LIB_FLAG) $(INCL_FLAG)
+		$(CC) -o $(NAME) $(OBJ) $(C_FLAGS) $(LIB_FLAG) $(INCL_FLAG)
 
 clean:
 	rm -f *.o
