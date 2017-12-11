@@ -8,6 +8,8 @@
 SRC	=	srcs/brain.c		\
 		srcs/init.c		\
 		srcs/algo.c		\
+		srcs/convert.c		\
+		srcs/draw.c		\
 
 OBJ	=	$(SRC:.c = .o)
 

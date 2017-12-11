@@ -23,5 +23,5 @@ char **double_tab(char *buffer, int size)
 		++i;
 		++j;
 	}
-	return (tab);
+	return(tab);
 }
