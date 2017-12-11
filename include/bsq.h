@@ -8,6 +8,6 @@
 #ifndef BSQ_H
 #define BSQ_H
 
-char **double_tab(char *buffer);
+char **double_tab(char *buffer, int nb);
 
 #endif

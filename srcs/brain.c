@@ -9,13 +9,14 @@
 
 void my_reader(char *file_path)
 {
-	char		*buffer = malloc(sizeof(double) * 20000);
+	char		*buffer = 0;
 	int		fd = open(file_path, O_RDONLY);
 	struct stat	size;
 
 	stat(file_path, &size);
+	buffer = malloc(sizeof(char) * size.st_size + 1);
 	read(fd, buffer, size.st_size);
-	double_tab(buffer);
+	double_tab(buffer, size.st_size);
 	close(fd);
 	free(buffer);
 }

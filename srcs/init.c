@@ -7,14 +7,15 @@
 
 #include "my.h"
 
-char **double_tab(char *buffer)
+char **double_tab(char *buffer, int size)
 {
 	int	j = 0;
 	int	i = 0;
-	char	**tab = malloc(sizeof(double) * 20000);
+	char	**tab = malloc(size);
+	int	nb = my_strlen(buffer) / my_getnbr(buffer);
 
 	while (buffer[j] != '\0') {
-		tab[i] = malloc(sizeof(double) * 20000);
+		tab[i] = malloc(nb);
 		for (int count = 0; buffer[j] != '\n'; ++count) {
 			tab[i][count] = buffer[j];
 			++j;
