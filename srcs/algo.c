@@ -57,11 +57,14 @@ char **get_lower(char **mod_tab, int i, int j)
 
 char **center(char **tab)
 {
+	int i = 0;
 	char **mod_tab = tab;
-	mod_tab = init_algo(tab);
-	mod_tab = anid_algo(tab);
-	for (int i = 0; mod_tab[i]; ++i) {
-		printf("%s\n", mod_tab[i]);
+	mod_tab = init_algo(mod_tab);
+	mod_tab = anid_algo(mod_tab);
+	print_x(tab, mod_tab);
+	while (tab[i]) {
+		my_printf("%s\n", tab[i]);
+		++i;
 	}
 	return(tab);
 }
