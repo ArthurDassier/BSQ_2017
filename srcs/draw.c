@@ -29,15 +29,19 @@ char **print_x(char **tab, char **mod_tab)
 
 char **find_sqr(char **tab, int mod_tab, int h_value, int i, int j)
 {
-	if (mod_tab == h_value) {
-		for (int value = 0; value != h_value; ++value) {
-			for (int count = 0; count != h_value; ++count) {
-				tab[i - value][j - count] = 'x';
-			}
-		}
-	} else if (mod_tab >= 1)
+	if (mod_tab == h_value)
+		tab = put_x(tab, h_value, i, j);
+	else if (mod_tab >= 1 && mod_tab < h_value)
 		tab[i][j] = '.';
 	else if (mod_tab == 0)
 		tab[i][j] = 'o';
+	return (tab);
+}
+
+char **put_x(char **tab, int h_value, int i, int j)
+{
+	for (int value = 0; value != h_value; ++value)
+		for (int count = 0; count != h_value; ++count)
+			tab[i - value][j - count] = 'x';
 	return (tab);
 }

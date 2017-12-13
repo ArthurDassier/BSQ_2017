@@ -39,26 +39,33 @@ char **get_lower(char **mod_tab, int i, int j)
 	int	first_elm = cti(mod_tab[i - 1][j - 1]);
 	int	second_elm = cti(mod_tab[i - 1][j]);
 	int	third_elem = cti(mod_tab[i][j - 1]);
-	int	nb = first_elm;
 
 	if (mod_tab[i][j] == 'o') {
 		mod_tab[i][j] = '0';
 		return(mod_tab);
 	}
+	mod_tab[i][j] = itc(lower(first_elm, second_elm, third_elem));
+	return(mod_tab);
+}
+
+int lower(int first_elm, int second_elm, int third_elem)
+{
+	int	nb = first_elm;
+
 	if (second_elm < nb)
 		nb = second_elm;
 	if (third_elem < nb)
 		nb = third_elem;
 	if (first_elm < nb)
 		nb = first_elm;
-	mod_tab[i][j] = itc(nb) + 1;
-	return(mod_tab);
+	return (nb + 1);
 }
 
 char **center(char **tab)
 {
-	int i = 0;
-	char **mod_tab = tab;
+	int	i = 1;
+	char	**mod_tab = tab;
+
 	mod_tab = init_algo(mod_tab);
 	mod_tab = anid_algo(mod_tab);
 	print_x(tab, mod_tab);

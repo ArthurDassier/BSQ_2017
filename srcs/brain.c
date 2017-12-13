@@ -17,8 +17,12 @@ void my_reader(char *file_path)
 	stat(file_path, &size);
 	buffer = malloc(sizeof(char) * size.st_size + 1);
 	read(fd, buffer, size.st_size);
-	tab = double_tab(buffer, size.st_size);
-	center(tab);
+	if (buffer[0] == '1' && buffer[1] == '\n')
+		my_printf("%s", buffer);
+	else {
+		tab = double_tab(buffer, size.st_size);
+		center(tab);
+	}
 	close(fd);
 	free(buffer);
 }
