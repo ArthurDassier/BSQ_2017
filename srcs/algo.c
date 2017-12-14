@@ -64,13 +64,10 @@ int lower(int first_elm, int second_elm, int third_elem)
 char **center(char **tab)
 {
 	int	i = 1;
-	int	j = 0;
 	char	**mod_tab = tab;
 
 	mod_tab = init_algo(mod_tab);
 	mod_tab = anid_algo(mod_tab);
-	while(tab[j])
-		printf("%s\n", tab[j++]);
 	print_x(tab, mod_tab);
 	while (tab[i]) {
 		my_printf("%s\n", tab[i]);

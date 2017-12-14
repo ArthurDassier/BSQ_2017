@@ -8,6 +8,11 @@
 #ifndef BSQ_H
 #define BSQ_H
 
+typedef struct one_time
+{
+	int the_one;
+} one_time;
+
 char **double_tab(char *buffer, int size);
 char **center(char **tab);
 char **init_algo(char **tab);
@@ -16,9 +21,10 @@ char **get_lower(char **tab, int i, int j);
 char **print_x(char **tab, char **mod_tab);
 int get_higher(int mod_tab, int h_value);
 int lower(int first_elm, int second_elm, int third_elem);
-char **find_sqr(char **tab, int h_value, int i, int j);
+char **find_sqr(char **tab, int h_value, int i, int j, one_time *one);
 char **put_x(char **tab, int h_value, int i, int j);
 int cti(char c);
 char itc(int nb);
+
 
 #endif
