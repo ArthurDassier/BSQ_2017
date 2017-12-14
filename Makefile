@@ -21,7 +21,7 @@ MY.H_DIR	=	./include
 
 CC	=	gcc
 
-C_FLAGS	=	-Wall -Wextra
+C_FLAGS	=	-g3 -Wall -Wextra
 
 LIB_FLAG	=	-L$(LIB_DIR) -lmy
 

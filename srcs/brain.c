@@ -17,6 +17,7 @@ void my_reader(char *file_path)
 	stat(file_path, &size);
 	buffer = malloc(sizeof(char) * size.st_size + 1);
 	read(fd, buffer, size.st_size);
+	buffer[size.st_size] = '\0';
 	if (buffer[0] == '1' && buffer[1] == '\n')
 		my_printf("%s", buffer);
 	else {

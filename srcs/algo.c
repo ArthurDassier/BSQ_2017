@@ -21,7 +21,7 @@ char **init_algo(char **mod_tab)
 		else
 			mod_tab[j][0] = '0';
 	}
-	return(mod_tab);
+	return (mod_tab);
 }
 
 char **anid_algo(char **mod_tab)
@@ -31,7 +31,7 @@ char **anid_algo(char **mod_tab)
 			mod_tab = get_lower(mod_tab, i, j);
 		}
 	}
-	return(mod_tab);
+	return (mod_tab);
 }
 
 char **get_lower(char **mod_tab, int i, int j)
@@ -42,10 +42,10 @@ char **get_lower(char **mod_tab, int i, int j)
 
 	if (mod_tab[i][j] == 'o') {
 		mod_tab[i][j] = '0';
-		return(mod_tab);
+		return (mod_tab);
 	}
 	mod_tab[i][j] = itc(lower(first_elm, second_elm, third_elem));
-	return(mod_tab);
+	return (mod_tab);
 }
 
 int lower(int first_elm, int second_elm, int third_elem)
@@ -64,14 +64,17 @@ int lower(int first_elm, int second_elm, int third_elem)
 char **center(char **tab)
 {
 	int	i = 1;
+	int	j = 0;
 	char	**mod_tab = tab;
 
 	mod_tab = init_algo(mod_tab);
 	mod_tab = anid_algo(mod_tab);
+	while(tab[j])
+		printf("%s\n", tab[j++]);
 	print_x(tab, mod_tab);
 	while (tab[i]) {
 		my_printf("%s\n", tab[i]);
 		++i;
 	}
-	return(tab);
+	return (tab);
 }

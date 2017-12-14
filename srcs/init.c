@@ -11,17 +11,23 @@ char **double_tab(char *buffer, int size)
 {
 	int	j = 0;
 	int	i = 0;
-	char	**tab = malloc(size);
-	int	nb = my_strlen(buffer) / my_getnbr(buffer);
+	int	count = 0;
+	char	**tab = malloc(size + 1);
+	int	nb = 0;
 
+	if (tab == NULL || buffer == NULL)
+		return (NULL);
+	nb = my_strlen(buffer) / my_getnbr(buffer);
 	while (buffer[j] != '\0') {
 		tab[i] = malloc(nb);
-		for (int count = 0; buffer[j] != '\n'; ++count) {
+		for (count = 0; buffer[j] != '\n'; ++count) {
 			tab[i][count] = buffer[j];
 			++j;
 		}
+		tab[i][count] = '\0';
 		++i;
 		++j;
 	}
-	return(tab);
+	tab[i] = 0;
+	return (tab);
 }
