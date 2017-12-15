@@ -17,6 +17,8 @@ void my_reader(char *file_path)
 	stat(file_path, &size);
 	buffer = malloc(sizeof(char) * size.st_size + 1);
 	read(fd, buffer, size.st_size);
+	if (my_strlen(buffer) >= 2000000)
+		return;
 	buffer[size.st_size] = '\0';
 	tab = double_tab(buffer, size.st_size);
 	center(tab);
