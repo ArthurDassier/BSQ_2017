@@ -20,7 +20,7 @@ char **print_x(char **tab, char **mod_tab)
 	one_time 	one;
 
 	one.the_one = 0;
-	for (int i = 0; mod_tab[i]; ++i)
+	for (int i = 1; mod_tab[i]; ++i)
 		for (int j = 1; mod_tab[i][j]; ++j)
 			h_value = get_higher(cti(mod_tab[i][j]), h_value);
 	for (int i = 1; mod_tab[i]; ++i)
