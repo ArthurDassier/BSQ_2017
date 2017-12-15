@@ -7,6 +7,8 @@
 
 #include "my.h"
 
+int the_one = 0;
+
 int get_higher(int mod_tab, int h_value)
 {
 	if (mod_tab > h_value)
@@ -17,25 +19,23 @@ int get_higher(int mod_tab, int h_value)
 char **print_x(char **tab, char **mod_tab)
 {
 	int		h_value = cti(mod_tab[1][0]);
-	one_time 	one;
 
-	one.the_one = 0;
 	for (int i = 1; mod_tab[i]; ++i)
 		for (int j = 1; mod_tab[i][j]; ++j)
 			h_value = get_higher(cti(mod_tab[i][j]), h_value);
 	for (int i = 1; mod_tab[i]; ++i)
 		for (int j = 0; mod_tab[i][j]; ++j)
-			tab = find_sqr(tab, h_value, i, j, &one);
+			tab = find_sqr(tab, h_value, i, j);
 	return(tab);
 }
 
-char **find_sqr(char **tab, int h_value, int i, int j, one_time *one)
+char **find_sqr(char **tab, int h_value, int i, int j)
 {
 	int	mod_tab = cti(tab[i][j]);
 
-	if (mod_tab == h_value && one->the_one == 0) {
+	if (mod_tab == h_value && the_one == 0) {
 		tab = put_x(tab, h_value, i, j);
-		one->the_one = 1;
+		the_one = 1;
 	}
 	else if (mod_tab >= 1 && mod_tab < h_value)
 		tab[i][j] = '.';
