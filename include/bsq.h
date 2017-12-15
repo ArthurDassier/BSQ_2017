@@ -8,11 +8,6 @@
 #ifndef BSQ_H
 #define BSQ_H
 
-typedef struct one_time
-{
-	int the_one;
-} one_time;
-
 char **double_tab(char *buffer, int size);
 char **center(char **tab);
 char **init_algo(char **tab);

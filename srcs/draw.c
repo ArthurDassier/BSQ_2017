@@ -33,7 +33,7 @@ char **find_sqr(char **tab, int h_value, int i, int j)
 {
 	int	mod_tab = cti(tab[i][j]);
 
-	if (mod_tab == h_value && the_one == 0) {
+	if (mod_tab == h_value && the_one == 0 && h_value != 0) {
 		tab = put_x(tab, h_value, i, j);
 		the_one = 1;
 	}
