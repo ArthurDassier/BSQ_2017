@@ -7,8 +7,6 @@
 
 #include "my.h"
 
-int the_one = 0;
-
 int get_higher(int mod_tab, int h_value)
 {
 	if (mod_tab > h_value)
@@ -32,6 +30,7 @@ char **print_x(char **tab, char **mod_tab)
 char **find_sqr(char **tab, int h_value, int i, int j)
 {
 	int	mod_tab = cti(tab[i][j]);
+	static int the_one = 0;
 
 	if (mod_tab == h_value && the_one == 0 && h_value != 0) {
 		tab = put_x(tab, h_value, i, j);
